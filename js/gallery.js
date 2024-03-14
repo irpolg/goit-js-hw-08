@@ -66,9 +66,6 @@ const images = [
 
 const container = document.querySelector(".gallery");
 container.insertAdjacentHTML("beforeend", createMarkup(images));
-  //insertAdjacentHTML() разбирает указанный текст 
-  //как HTML или XML и вставляет полученные узлы (nodes) 
-  //в DOM дерево в указанную позицию. 
 
 function createMarkup(arr) {
     return arr
@@ -84,37 +81,22 @@ function createMarkup(arr) {
             </a>
         </li>
     `).join('')
-}
-//console.log(createMarkup(images));
+} 
 
-container.addEventListener("click", handleImageClick);
-
+container.addEventListener("click", handleImageClick(images));
 function handleImageClick(event) {
-    // console.log(event.target);
-    // console.log(event.currentTarget);
-
     if (event.target === event.currentTarget) {
-        // console.log("between: ", event.target);
         return;
     }
-
-    // console.log(event.target);
     const currentImage = event.target.closest(".gallery-item");
-    // console.log(event.target);
-    // console.log(currentImage);
+    // const imageId = currentImage.dataset.id;
+    // const image = image.find(item => item.id === Number
+    const instance = basicLightbox.create(`
+        <div class = "modal">
+            <img src = "${item.original}" 
+                 alt = "${item.description}"           
+            />
+        </div>
+`)
+instance.show()
 }
-
-
-// модальне вікно 
-// import * as basicLightbox from 'basiclightbox'
-
-// const instance = basicLightbox.create(`
-//     <div class="modal">
-//         <p>
-//             Your first lightbox with just a few lines of code.
-//             Yes, it's really that simple.
-//         </p>
-//     </div>
-// `)
-
-// instance.show()

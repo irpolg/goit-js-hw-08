@@ -2,9 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 24px; 
-    width: 1440px;
+    width: 1440px; 
     height: 696px;
     padding: 24px 156px;
+    /* width: calc((100% - 48px) / 2); */
 }
 
 ul {
@@ -13,7 +14,6 @@ ul {
 
 .gallery .gallery-item:hover,
 .gallery .gallery-item:focus {
-    /* border-color: #404bbf; */
     transform: scale(1.1);
 }
 
