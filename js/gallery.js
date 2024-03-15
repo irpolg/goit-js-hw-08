@@ -93,9 +93,11 @@ function handleImageClick(event) {
     // const image = image.find(item => item.id === Number
     const instance = basicLightbox.create(`
         <div class = "modal">
+            <a class="gallery-link" href="${item.original}">
             <img src = "${item.original}" 
                  alt = "${item.description}"           
             />
+            </a>
         </div>
 `)
 instance.show()
