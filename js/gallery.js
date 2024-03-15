@@ -92,13 +92,13 @@ function handleImageClick(event) {
     // const imageId = currentImage.dataset.id;
     // const image = image.find(item => item.id === Number
     const instance = basicLightbox.create(`
-        <div class = "modal">
-            <a class="gallery-link" href="${item.original}">
-            <img src = "${item.original}" 
+        <div class = "modal"> 
+            <img class="modal-img" src = "${item.original}" 
                  alt = "${item.description}"           
             />
-            </a>
         </div>
 `)
 instance.show()
 }
+
+// <a class="gallery-link" href="${item.original}">
