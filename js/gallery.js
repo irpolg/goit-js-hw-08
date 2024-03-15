@@ -83,22 +83,21 @@ function createMarkup(arr) {
     `).join('')
 } 
 
-container.addEventListener("click", handleImageClick(images));
+container.addEventListener("click", handleImageClick);
 function handleImageClick(event) {
     if (event.target === event.currentTarget) {
         return;
     }
     const currentImage = event.target.closest(".gallery-item");
-    // const imageId = currentImage.dataset.id;
-    // const image = image.find(item => item.id === Number
+    const imageDescription = currentImage.description;
+    const image = images.find(image => image.description === imageDescription);
+    
     const instance = basicLightbox.create(`
         <div class = "modal"> 
-            <img class="modal-img" src = "${item.original}" 
-                 alt = "${item.description}"           
-            />
+                <img class="modal-img" src = "${image.original}" 
+                     alt = "${image.description}"           
+                />
         </div>
 `)
 instance.show()
 }
-
-// <a class="gallery-link" href="${item.original}">

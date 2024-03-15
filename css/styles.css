@@ -24,7 +24,9 @@ transition: transform 250ms ease-in-out;
 .modal {
     width: 1440px;
     height: 696px;
-    padding: 28px 164px;
+    background-color: #2E2F42CC;
+    ;
+    /* padding: 28px 164px; */
     /* user-select: none;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
