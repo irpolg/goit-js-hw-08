@@ -85,19 +85,21 @@ function createMarkup(arr) {
 
 container.addEventListener("click", handleImageClick);
 function handleImageClick(event) {
+    event.preventDefault();
     if (event.target === event.currentTarget) {
         return;
     }
-    const currentImage = event.target.closest(".gallery-item");
-    const imageDescription = currentImage.description;
+    console.log("event.target", event.target); // = img
+    const currentImage = event.target.closest('.gallery-image');
+    console.log("currentImage", currentImage); // шукаємо селектор li-шки
+
+    const imageDescription = currentImage.dataset.description;
     const image = images.find(image => image.description === imageDescription);
-    
+    const alt = event.target.getAttribute("alt");
     const instance = basicLightbox.create(`
-        <div class = "modal"> 
-                <img class="modal-img" src = "${image.original}" 
-                     alt = "${image.description}"           
-                />
-        </div>
-`)
+        <img class="modal-img" src = "${event.target.dataset.source}" 
+            alt = "${alt}"           
+        />
+    `)
 instance.show()
 }
