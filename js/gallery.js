@@ -93,9 +93,9 @@ function handleImageClick(event) {
     const currentImage = event.target.closest('.gallery-image');
     console.log("currentImage", currentImage); // шукаємо селектор li-шки
 
-    const imageDescription = currentImage.dataset.description;
-    const image = images.find(image => image.description === imageDescription);
-    const alt = event.target.getAttribute("alt");
+    const imageDescription = currentImage.dataset.description; //undefined
+    const image = images.find(image => image.description === imageDescription); //undefined
+    const alt = event.target.getAttribute("alt");  // беремо властивість description
     const instance = basicLightbox.create(`
         <img class="modal-img" src = "${event.target.dataset.source}" 
             alt = "${alt}"           
@@ -103,3 +103,9 @@ function handleImageClick(event) {
     `)
 instance.show()
 }
+
+  // const imageDescription = currentImage.dataset.description;
+  // console.log("imageDescription: ", imageDescription);   //undefined
+  // const image = images.find(image => image.description === imageDescription);
+  // console.log("image: ", image);                         //undefined
+  // console.log("imageDescription: ", imageDescription);   //undefined 
