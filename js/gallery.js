@@ -92,9 +92,11 @@ function handleImageClick(event) {
     console.log("event.target", event.target); // = img
     const currentImage = event.target.closest('.gallery-image');
     console.log("currentImage", currentImage); // шукаємо селектор li-шки
-
+// працює без цих 2 const :
     const imageDescription = currentImage.dataset.description; //undefined
     const image = images.find(image => image.description === imageDescription); //undefined
+//
+
     const alt = event.target.getAttribute("alt");  // беремо властивість description
     const instance = basicLightbox.create(`
         <img class="modal-img" src = "${event.target.dataset.source}" 
